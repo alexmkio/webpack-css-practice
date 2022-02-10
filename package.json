@@ -1,7 +1,8 @@
 {
   "name": "webpack-css-practice",
+  "homepage": "https://alexmkio.github.io/webpack-css-practice/",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack-css-practice",
   "private": true,
   "scripts": {
     "start": "webpack serve",
@@ -17,10 +18,10 @@
   "bugs": {
     "url": "https://github.com/alexmkio/webpack-css-practice/issues"
   },
-  "homepage": "https://github.com/alexmkio/webpack-css-practice#readme",
   "devDependencies": {
     "css-loader": "^6.6.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
