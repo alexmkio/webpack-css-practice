@@ -101,3 +101,5 @@ typings/
 
 # TernJS port file
 .tern-port
+dist/bundle.js.map
+dist/bundle.js

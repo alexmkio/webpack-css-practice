@@ -1,5 +1,4 @@
-$primary-color: lime;
-$secondary-color: red;
+@use 'variables';
 
 @mixin flexy($justify-direction) {
   display: flex;
@@ -7,18 +6,17 @@ $secondary-color: red;
 }
 
 .sass_variables {
-  background-color: $primary-color;
+  background-color: variables.$primary-color;
 }
 
 .sass_nesting {
   p {
-    background-color: $secondary-color;
+    background-color: variables.$secondary-color;
   }
 }
 
 a {
   color: blue;
-
   &:hover { 
     color: orange; 
   }
@@ -39,7 +37,7 @@ a {
 }
 
 .sass_function {
-  background-color: invert($primary-color, 60%);
+  background-color: invert(variables.$primary-color, 60%);
 }
 
 .sass {
