@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack CSS Practice</title>
+  </head>
+  <body>
+    <main>
+      <h1 id="sass">
+        Sass
+      </h1>
+
+      <section>
+        <h2>
+          Using variables
+        </h2>
+        <p class='sass_variables'>$primary-color: lime;</p>
+        <code>
+          .sass_variables {
+            background-color: $primary-color;
+          }
+        </code>
+      </section>
+
+      <section class='sass_nesting'>
+        <h2>
+          Nesting
+        </h2>
+        <p>$secondary-color: red;</p>
+        <code>
+          .sass_nesting {
+            p {
+              background-color: $primary-color;
+            }
+          }
+        </code>
+      </section>
+
+      <section>
+        <h2>
+          Nesting & Psuedo-selectors
+        </h2>
+        <a href='https://sass-lang.com/guide'>I am a link</a>
+        <code>
+          a {
+            color: blue;
+          
+            &:hover { 
+              color: orange; 
+            }
+          }
+        </code>
+      </section>
+
+      <section>
+        <h2>
+          Partials
+        </h2>
+        <p class='sass_partial'>This is using an imported partial file</p>
+        <code>
+          @import '../../styles/_variables.scss'
+          .sass_partial {
+            background-color: $primary-color;
+            color: $blue-light;
+          }
+        </code>
+      </section>
+
+      <section>
+        <h2>
+          Mixins
+        </h2>
+        <p class='sass_mixin'>This is using a mixin to dynamically flex the container</p>
+        <code>
+          @mixin flexy($justify-direction) {
+            display: flex;
+            justify-content: $justify-direction;
+          }
+          
+          .sass_mixin {
+            @include flexy(center);
+          }
+        </code>
+      </section>
+
+      <section>
+        <h2>
+          Functions
+        </h2>
+        <div class='sass_function'>
+          <p>This is using a function to dynamically inverts color</p>
+        </div>
+        <code>
+          @function invert($color, $amount: 100%) {
+            $inverse: change-color($color, $hue: hue($color) + 180);
+            @return mix($inverse, $color, $amount);
+          }
+          
+          .sass_function {
+            background-color: invert($primary-color, 60%);
+          }
+        </code>
+      </section>
+
+      <section>
+        <h2>
+          Extending
+        </h2>
+        <div class='sass_extended'>
+          <p>This class extends another</p>
+        </div>
+        <code>
+          .sass {
+            border: 1px #f00;
+            background-color: yellow;
+          }
+          
+          .sass-extended {
+            @extend .sass;
+            border-width: 5px;
+            border-style: dashed;
+          }
+        </code>
+      </section>
+    </main>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
